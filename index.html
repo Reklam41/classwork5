@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>September</title>
+  </head>
+  <body>
+    <nav>
+      <a>Home</a>
+      <a>About</a>
+      <a>Work</a>
+      <a>Contact</a>
+    </nav>
+    <h1><span>Reklam Dasvidanya</span></h1>
+    <script>
+      // Array of names to cycle through
+      const names = ["ДОБРА", "ПОЖАЛОВАТЬ", "В", "СТАВРОПОЛЕ"];
+      // Array of background images
+      const backgrounds = [
+        "url('https://picsum.photos/seed/welcome/600/300')",
+        "url('https://picsum.photos/seed/mkhonto/600/300')",
+        "url('https://picsum.photos/seed/mkhuhlu/600/300')",
+        "url('https://picsum.photos/seed/1246/600/300')",
+      ];
+
+      let currentIndex = -1; // Index of the current name and background
+
+      document.addEventListener("click", function () {
+        // Update the text and background image to the next ones in the arrays
+        currentIndex = (currentIndex + 1) % names.length;
+        document.querySelector("h1 span").innerText = names[currentIndex];
+        document.querySelector("h1").style.backgroundImage =
+          backgrounds[currentIndex];
+        document.querySelector("body").style.backgroundImage =
+          backgrounds[currentIndex];
+      });
+    </script>
+    <footer>Reklam Dasvidanya &copy; 2024</footer>
+  </body>
+</html>
